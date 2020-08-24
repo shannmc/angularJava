@@ -9,11 +9,13 @@ import {RouterModule, Routes} from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
+  {path : '', component: RestaurantsComponent},
   {path : 'admin/users', component : UsersComponent},
-  {path : 'restaurants', component: RestaurantsComponent},
+  {path : 'restaurants',component: RestaurantsComponent},
   {path : '404', component : PageNotFoundComponent},
   {path : '**', redirectTo : '/404'}
 ];
+
 
 @NgModule({
   declarations: [

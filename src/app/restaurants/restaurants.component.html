@@ -1,1 +1,23 @@
-<p>restaurants works!</p>
+<h1>Restaurants</h1>
+
+<a class="btn btn-warning mb-3">add</a>
+<div class="row">
+  <div class="col-6">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor = "let restaurant of restaurants" >
+        <td>{{restaurant.id}}</td>
+        <td>{{restaurant.name}}</td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

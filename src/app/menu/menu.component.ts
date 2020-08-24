@@ -13,10 +13,6 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  navigateToRestaurants() {
-    this.router.navigate(['restaurants']);
-  }
-
   navigateToUsersAdmin() {
     this.router.navigate((['admin','users']));
   }

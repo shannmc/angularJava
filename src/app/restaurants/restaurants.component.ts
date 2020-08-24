@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from "../data.service";
+import {Restaurant} from "../model/Restaurant";
 
 @Component({
-  selector: 'app-rooms',
+  selector: 'app-restaurants',
   templateUrl: './restaurants.component.html',
   styleUrls: ['./restaurants.component.css']
 })
 export class RestaurantsComponent implements OnInit {
 
-  constructor() { }
+  restaurants: Array<Restaurant>;
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.restaurants = this.dataService.restaurants;
+    console.log(this.dataService.restaurants)
   }
 
 }
