@@ -4,5 +4,7 @@ export class Restaurant {
   category: string;
   location: string;
   rating: number;
+  haveTried: boolean;
+  notes: string;
 
 }

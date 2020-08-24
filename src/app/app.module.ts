@@ -7,6 +7,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { UsersComponent } from './admin/users/users.component';
 import {RouterModule, Routes} from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {RestaurantDetailComponent} from "./restaurants/restaurantDetails/restaurant-detail.component";
 
 const routes: Routes = [
   {path : '', component: RestaurantsComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
     MenuComponent,
     RestaurantsComponent,
     UsersComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    RestaurantDetailComponent,
   ],
   imports: [
     BrowserModule,

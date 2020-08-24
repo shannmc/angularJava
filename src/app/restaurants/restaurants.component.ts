@@ -10,12 +10,19 @@ import {Restaurant} from "../model/Restaurant";
 export class RestaurantsComponent implements OnInit {
 
   restaurants: Array<Restaurant>;
+  selectedRestaurant: Restaurant;
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.restaurants = this.dataService.restaurants;
     console.log(this.dataService.restaurants)
+  }
+
+  setRestaurant(id: number) {
+    this.selectedRestaurant = this.restaurants.find(restaurant => {
+      return restaurant.id == id;
+    })
   }
 
 }

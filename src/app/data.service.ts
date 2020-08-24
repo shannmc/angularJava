@@ -16,11 +16,16 @@ export class DataService {
     restaurant1.id = 1;
     restaurant1.name = 'Applebees';
     restaurant1.location = 'west ashley';
+    restaurant1.category = "American";
+    restaurant1.rating = 1;
+    restaurant1.haveTried = true;
 
     const restaurant2 = new Restaurant();
     restaurant2.id = 2;
     restaurant2.name = 'Chickfila';
     restaurant2.location = 'Mt Pleasant';
+    restaurant2.category = "Fast food";
+    restaurant2.haveTried = false;
 
     this.restaurants.push(restaurant1);
     this.restaurants.push(restaurant2);
