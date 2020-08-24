@@ -10,7 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const routes: Routes = [
   {path : 'admin/users', component : UsersComponent},
-  {path : 'admin/restaurants', component: RestaurantsComponent},
+  {path : 'restaurants', component: RestaurantsComponent},
   {path : '404', component : PageNotFoundComponent},
   {path : '**', redirectTo : '/404'}
 ];
