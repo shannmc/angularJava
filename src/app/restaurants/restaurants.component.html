@@ -30,6 +30,6 @@
     </table>
   </div>
   <div class="col-6">
-    <app-restaurant-detail [restaurant]="selectedRestaurant"></app-restaurant-detail>
+    <app-restaurant-detail *ngIf="selectedRestaurant" [restaurant]="selectedRestaurant"></app-restaurant-detail>
   </div>
 </div>
