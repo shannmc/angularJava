@@ -12,6 +12,7 @@ export class UsersComponent implements OnInit {
 
   users: Array<User>;
   selectedUser: User;
+  action: string;
 
   constructor(private dataService: DataService,
               private route: ActivatedRoute,
@@ -27,16 +28,18 @@ export class UsersComponent implements OnInit {
     this.route.queryParams.subscribe(
       (params) => {
         const id = params['id'];
+        const action = params['action'];
         if (id) {
           this.selectedUser = this.users.find(user => {
             return user.id == +id;
           })
+        this.action = action;
         }
       }
     )
   }
 
   setUser(id: number) {
-    this.router.navigate(['/admin/users'], {queryParams: {id}})
+    this.router.navigate(['/admin/users'], {queryParams: {id, action : 'view'}})
   }
 }
