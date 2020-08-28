@@ -1,14 +1,23 @@
 import { Injectable } from '@angular/core';
 import {Restaurant} from './model/Restaurant'
 import {User} from './model/User';
+import {Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  restaurants: Array<Restaurant>;
-  users: Array<User>;
+  private restaurants: Array<Restaurant>;
+  private users: Array<User>;
+
+  getRestaurants(): Observable<Array<Restaurant>> {
+    return of(this.restaurants);
+  }
+
+  getUsers(): Observable<Array<User>> {
+    return of(this.users);
+  }
 
   constructor() {
     this.restaurants = new Array<Restaurant>();
