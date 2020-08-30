@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {RestaurantDetailComponent} from "./restaurants/restaurantDetails/restaurant-detail.component";
 import {UserDetailComponent} from "./admin/users/userDetails/user-detail.component";
 import {UserEditComponent} from "./admin/users/userEdit/user-edit.component";
+import {FormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {path : '', component: RestaurantsComponent},
@@ -33,7 +34,8 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,4 +16,7 @@ export class UserEditComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit() {
+    console.log("we need to save user")
+  }
 }
