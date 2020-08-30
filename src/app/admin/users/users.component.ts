@@ -24,16 +24,16 @@ export class UsersComponent implements OnInit {
         this.users = next;
       }
     )
+
     console.log(this.dataService.getUsers());
     this.route.queryParams.subscribe(
       (params) => {
         const id = params['id'];
-        const action = params['action'];
+        this.action = params['action'];
         if (id) {
           this.selectedUser = this.users.find(user => {
             return user.id == +id;
           })
-        this.action = action;
         }
       }
     )
@@ -41,5 +41,12 @@ export class UsersComponent implements OnInit {
 
   setUser(id: number) {
     this.router.navigate(['/admin/users'], {queryParams: {id, action : 'view'}})
+  }
+
+  addUser() {
+    this.selectedUser = new User();
+
+    this.router.navigate(['/admin/users'], {queryParams: {action : 'add'}})
+
   }
 }
