@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../../data.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {User} from "../../model/User";
+import {DataService} from '../../data.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {User} from '../../model/User';
 
 @Component({
   selector: 'app-users',
@@ -28,11 +28,11 @@ export class UsersComponent implements OnInit {
     console.log(this.dataService.getUsers());
     this.route.queryParams.subscribe(
       (params) => {
-        const id = params['id'];
-        this.action = params['action'];
+        const id = params.id;
+        this.action = params.action;
         if (id) {
           this.selectedUser = this.users.find(user => {
-            return user.id == +id;
+            return user.id === +id;
           })
         }
       }

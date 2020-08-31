@@ -1,0 +1,47 @@
+<h1>{{restaurant.id == null ? 'Add' : 'Edit' }}</h1>
+
+<div class="bg-warning p-5" *ngIf="message">{{message}}</div>
+
+<form #restaurantForm="ngForm">
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="restaurant name" [(ngModel)]="formRestaurant.name" name="name"
+           required #nameField="ngModel" (change)="checkIfNameIsValid()">
+    <div *ngIf="nameField.invalid && nameField.touched" class="alert alert-danger">Name is required</div>
+    <div *ngIf="!nameIsValid && nameField.touched" class="alert alert-danger">Name cannot be blank</div>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="category" placeholder="category" [(ngModel)]="formRestaurant.category" name="category"
+           required #categoryField="ngModel">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="rating" placeholder="rating" [(ngModel)]="formRestaurant.rating" name="rating"
+           required #ratingField="ngModel">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="haveTried" placeholder="no" [(ngModel)]="formRestaurant.haveTried" name="haveTried"
+           required #haveTriedField="ngModel">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="location" placeholder="location" [(ngModel)]="formRestaurant.location" name="location"
+           required #locationField="ngModel">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="notes" placeholder="notes" [(ngModel)]="formRestaurant.notes" name="notes"
+           required #notesField="ngModel">
+  </div>
+
+
+  <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="restaurantForm.invalid || !nameIsValid">Save</button>
+</form>

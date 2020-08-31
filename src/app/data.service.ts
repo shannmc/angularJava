@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Restaurant} from './model/Restaurant'
 import {User} from './model/User';
-import {Observable, of} from "rxjs";
+import {Observable, of} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -37,13 +37,31 @@ export class DataService {
     return of(newUser);
   }
 
+  updateRestaurant(restaurant: Restaurant) : Observable<Restaurant>{
+    const originalRestaurant = this.restaurants.find(r => r.id === restaurant.id);
+    originalRestaurant.name = restaurant.name;
+    return of(originalRestaurant);
+  }
+
+  addRestaurant(newRestaurant: Restaurant) : Observable<Restaurant> {
+    let id = 0;
+    for ( const restaurant of this.restaurants) {
+      if (restaurant.id > id) {
+        id = restaurant.id
+      }
+    }
+    newRestaurant.id = id + 1;
+    this.users.push(newRestaurant);
+    return of(newRestaurant);
+  }
+
   constructor() {
     this.restaurants = new Array<Restaurant>();
     const restaurant1 = new Restaurant();
     restaurant1.id = 1;
     restaurant1.name = 'Applebees';
     restaurant1.location = 'west ashley';
-    restaurant1.category = "American";
+    restaurant1.category = 'American';
     restaurant1.rating = 1;
     restaurant1.haveTried = true;
 
@@ -51,7 +69,7 @@ export class DataService {
     restaurant2.id = 2;
     restaurant2.name = 'Chickfila';
     restaurant2.location = 'Mt Pleasant';
-    restaurant2.category = "Fast food";
+    restaurant2.category = 'Fast food';
     restaurant2.haveTried = false;
 
     this.restaurants.push(restaurant1);
