@@ -10,6 +10,7 @@ export class DataService {
 
   private restaurants: Array<Restaurant>;
   private users: Array<User>;
+  private categories: Array<string>;
 
   getRestaurants(): Observable<Array<Restaurant>> {
     return of(this.restaurants);
@@ -19,6 +20,9 @@ export class DataService {
     return of(this.users);
   }
 
+  getCategories() {
+    return this.categories;
+  }
   updateUser(user: User) : Observable<User>{
     const originalUser = this.users.find(u => u.id === user.id);
     originalUser.name = user.name;
@@ -89,5 +93,14 @@ export class DataService {
     this.users.push(user1);
     this.users.push(user2);
     this.users.push(user3);
+
+    this.categories = new Array<string>();
+    const category1 = 'Southwest';
+    const category2 = 'Italian';
+    const category3 = 'subs';
+    this.categories.push(category1);
+    this.categories.push(category2);
+    this.categories.push(category3);
+
   }
 }

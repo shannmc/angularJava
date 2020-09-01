@@ -16,10 +16,10 @@ export class RestaurantEditComponent implements OnInit {
   formRestaurant: Restaurant;
   message: string;
   nameIsValid = false;
+  categories: Array<string>;
 
   constructor(private dataService: DataService,
               private router: Router) { }
-
   ngOnInit() {
     this.formRestaurant = Object.assign({}, this.restaurant)
     this.checkIfNameIsValid();
