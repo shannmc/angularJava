@@ -55,7 +55,7 @@ export class DataService {
       }
     }
     newRestaurant.id = id + 1;
-    this.users.push(newRestaurant);
+    this.restaurants.push(newRestaurant);
     return of(newRestaurant);
   }
 
