@@ -23,5 +23,13 @@ export class RestaurantDetailComponent implements OnInit {
     this.router.navigate(['restaurants'], {queryParams: {id: this.restaurant.id, action: 'edit'}})
   }
 
+  deleteRestaurant() {
+    this.dataService.deleteRestaurant(this.restaurant.id).subscribe(
+      next => {
+        this.router.navigate(['restaurants'])
+      }
+    )
+  }
+
 }
 

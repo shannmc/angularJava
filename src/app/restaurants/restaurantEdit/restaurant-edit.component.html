@@ -13,9 +13,16 @@
   </div>
 
   <div class = "form-group" *ngFor="let category of dataService.getCategories()">
-    <input type="checkbox" id="{{category}}" name={{category}}>
+    <input type="checkbox" id="{{category}}" [(ngModel)]="category.selected" name={{category}}>
     <label for="{{category}}">{{category}}</label>
   </div>
+
+<!--  <input value={{object.name}} type="checkbox" [(ng-model)]="object.selected" (change)="onChange(object.selected)">-->
+
+  <!--  //<input type="checkbox" [(ngModel)]="object.selected" />-->
+<!--  From Angular 4, must add the name attribute for this to bind.-->
+
+<!--  <input type="checkbox" [(ngModel)]="object.selected" name="element_name"/>-->
 
   <div class="form-group">
     <label for="name">Rating</label>

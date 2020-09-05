@@ -41,6 +41,12 @@ export class DataService {
     return of(newUser);
   }
 
+  deleteUser(id: number) :  Observable<any>{
+    const user = this.users.find(u => u.id === id);
+    this.users.splice(this.users.indexOf(user), 1);
+    return of(null);
+  }
+
   updateRestaurant(restaurant: Restaurant) : Observable<Restaurant>{
     const originalRestaurant = this.restaurants.find(r => r.id === restaurant.id);
     originalRestaurant.name = restaurant.name;
@@ -57,6 +63,16 @@ export class DataService {
     newRestaurant.id = id + 1;
     this.restaurants.push(newRestaurant);
     return of(newRestaurant);
+  }
+
+  deleteRestaurant(id: number) : Observable<any>{
+    const restaurant = this.restaurants.find(r => r.id === id);
+    this.restaurants.splice(this.restaurants.indexOf(restaurant), 1);
+    return of(null);
+  }
+
+  resetUserPassword(id: number) : Observable<any> {
+    return of(null);
   }
 
   constructor() {
