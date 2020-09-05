@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "RoomBookingClient": {
+    "WhereToEatClient": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/RoomBookingClient",
+            "outputPath": "dist/WhereToEatClient",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -34,6 +34,14 @@
             ]
           },
           "configurations": {
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace" : "src/app/data.service.ts",
+                  "with" : "src/app/data.service.local.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -68,18 +76,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "RoomBookingClient:build"
+            "browserTarget": "WhereToEatClient:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "RoomBookingClient:build:production"
+              "browserTarget": "WhereToEatClient:build:production"
+            },
+            "local": {
+              "browserTarget": "WhereToEatClient:build:local"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "RoomBookingClient:build"
+            "browserTarget": "WhereToEatClient:build"
           }
         },
         "test": {
@@ -116,15 +127,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "RoomBookingClient:serve"
+            "devServerTarget": "WhereToEatClient:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "RoomBookingClient:serve:production"
+              "devServerTarget": "WhereToEatClient:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "RoomBookingClient"
+  "defaultProject": "WhereToEatClient"
 }
