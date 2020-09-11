@@ -19,6 +19,12 @@ export class RestaurantsComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
+    this.dataService.getUser(3).subscribe(
+      (next) => {
+        console.log(next);
+        console.log(typeof (next))
+      }
+    );
     this.dataService.getRestaurants().subscribe(
       (next) => {
         this.restaurants = next;

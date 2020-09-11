@@ -12,6 +12,7 @@ import {UserDetailComponent} from './admin/users/userDetails/user-detail.compone
 import {UserEditComponent} from './admin/users/userEdit/user-edit.component';
 import {FormsModule} from '@angular/forms';
 import {RestaurantEditComponent} from './restaurants/restaurantEdit/restaurant-edit.component';
+import {HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
   {path : '', component: RestaurantsComponent},
@@ -37,6 +38,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    HttpClientModule,
     FormsModule,
   ],
   providers: [],
