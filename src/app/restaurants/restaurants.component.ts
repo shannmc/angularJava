@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service';
 import {Restaurant} from '../model/Restaurant';
 import {ActivatedRoute, Router} from '@angular/router';
+import {User} from "../model/User";
 
 @Component({
   selector: 'app-restaurants',
@@ -22,7 +23,10 @@ export class RestaurantsComponent implements OnInit {
     this.dataService.getUser(3).subscribe(
       (next) => {
         console.log(next);
-        console.log(typeof (next))
+
+        const user = User.fromHttp(next);
+        console.log(user.getRole());
+
       }
     );
     this.dataService.getRestaurants().subscribe(
