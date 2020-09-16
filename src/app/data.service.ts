@@ -20,7 +20,7 @@ export class DataService {
   }
 
   getUsers(): Observable<Array<User>> {
-    return of(null);
+    return this.http.get<Array<User>>(environment.restUrl + '/api/users');
   }
 
   getCategories() {
