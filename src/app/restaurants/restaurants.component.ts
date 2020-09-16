@@ -24,7 +24,7 @@ export class RestaurantsComponent implements OnInit {
       (next) => {
         console.log(next);
 
-        const user = User.fromHttp(next);
+        const user : User = new User();
         console.log(user.getRole());
 
       }

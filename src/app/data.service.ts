@@ -3,7 +3,8 @@ import {Restaurant} from './model/Restaurant'
 import {User} from './model/User';
 import {Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {environment} from "../environments/environment";
+import {environment} from '../environments/environment';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -65,5 +66,10 @@ export class DataService {
   getUser(id: number): Observable<User>{
     console.log(environment.restUrl);
     return this.http.get<User>(environment.restUrl + '/api/users/' + id)
+      .pipe(
+        map(data => {
+          return User.fromHttp(data)
+      }
+    ))
   }
 }
