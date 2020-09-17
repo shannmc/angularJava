@@ -16,11 +16,29 @@ export class DataService {
   private categories: Array<string>;
 
   getRestaurants(): Observable<Array<Restaurant>> {
-    return of(null);
+    return this.http.get<Array<Restaurant>>(environment.restUrl + '/api/restaurants')
+      .pipe(
+        map(data => {
+          const restaurants = new Array<Restaurant>();
+          for (const restaurant of data) {
+            restaurants.push(Restaurant.fromHttp(restaurant))
+          }
+          return restaurants;
+        })
+      );
   }
 
   getUsers(): Observable<Array<User>> {
-    return this.http.get<Array<User>>(environment.restUrl + '/api/users');
+    return this.http.get<Array<User>>(environment.restUrl + '/api/users')
+      .pipe(
+        map( data => {
+          const users = new Array<User>();
+          for (const user of data) {
+            users.push(User.fromHttp(user))
+          }
+          return users;
+        })
+      );
   }
 
   getCategories() {
