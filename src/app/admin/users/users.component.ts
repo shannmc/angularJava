@@ -21,6 +21,10 @@ export class UsersComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
+    this.loadData()
+  }
+
+  loadData() {
     this.dataService.getUsers().subscribe(
       (next) => {
         this.users = next;
@@ -41,8 +45,6 @@ export class UsersComponent implements OnInit {
         this.message = 'an error has occurred';
       }
     )
-
-
   }
 
   setUser(id: number) {

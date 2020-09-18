@@ -45,7 +45,7 @@ export class DataService {
     return null;
   }
   updateUser(user: User) : Observable<User>{
-    return of(null);
+    return this.http.put<User>(environment.restUrl + '/api/users', user);
 
   }
 
