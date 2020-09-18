@@ -28,10 +28,9 @@
       </tr>
       </tbody>
     </table>
+    <div *ngIf="loadingData"> {{message}}</div>
   </div>
   <div class="col-6">
-<!--    <app-restaurant-detail *ngIf="selectedRestaurant" [restaurant]="selectedRestaurant"></app-restaurant-detail>-->
-<!--    <app-restaurant-detail [restaurant]="selectedRestaurant"></app-restaurant-detail>-->
     <app-restaurant-detail *ngIf="action ==='view'" [restaurant]="selectedRestaurant"></app-restaurant-detail>
     <app-restaurant-edit *ngIf="action ==='edit' || action === 'add'" [restaurant]="selectedRestaurant"></app-restaurant-edit>
   </div>

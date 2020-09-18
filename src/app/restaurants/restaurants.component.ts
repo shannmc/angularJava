@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service';
 import {Restaurant} from '../model/Restaurant';
 import {ActivatedRoute, Router} from '@angular/router';
-import {User} from "../model/User";
 
 @Component({
   selector: 'app-restaurants',
@@ -14,24 +13,22 @@ export class RestaurantsComponent implements OnInit {
   restaurants: Array<Restaurant>;
   selectedRestaurant: Restaurant;
   action: string;
+  loadingData = true;
+  message = 'Please wait...getting list of restaurants';
 
   constructor(private dataService: DataService,
               private route: ActivatedRoute,
               private router: Router) { }
 
   ngOnInit() {
-    this.dataService.getUser(3).subscribe(
-      (next) => {
-        console.log(next);
-
-        const user : User = new User();
-        console.log(user.getRole());
-
-      }
-    );
     this.dataService.getRestaurants().subscribe(
-      (next) => {
-        this.restaurants = next;
+    (next) => {
+      this.restaurants = next;
+      this.loadingData = false;
+    },
+      (error) => {
+      console.log('Shannon');
+        this.message = 'An error has occurred';
       }
     );
     console.log(this.dataService.getRestaurants());
