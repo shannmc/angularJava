@@ -9,6 +9,7 @@ export class Restaurant {
 
   static fromHttp(restaurant : Restaurant) : Restaurant {
     const newRestaurant = new Restaurant();
+    newRestaurant.id = restaurant.id;
     newRestaurant.category = restaurant.category;
     newRestaurant.location = restaurant.location;
     newRestaurant.haveTried = restaurant.haveTried;
