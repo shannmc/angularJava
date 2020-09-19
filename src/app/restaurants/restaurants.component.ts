@@ -52,10 +52,12 @@ export class RestaurantsComponent implements OnInit {
   processUrlParams() {
     this.route.queryParams.subscribe(
       (params) => {
-        this.action = null;
         const id = params.id;
+        this.action = null;
         if (id) {
-          this.selectedRestaurant = this.restaurants.find( restaurant => restaurant.id === +id);
+          this.selectedRestaurant = this.restaurants.find(restaurant => {
+            return restaurant.id === +id
+          });
           this.action = params.action;
         }
         if (params.action === 'add') {

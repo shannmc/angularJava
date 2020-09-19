@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
 import {Restaurant} from '../../model/Restaurant';
 import {DataService} from '../../data.service';
@@ -13,6 +13,9 @@ export class RestaurantEditComponent implements OnInit {
 
   @Input()
   restaurant: Restaurant;
+
+  @Output()
+  dataChangedEvent = new EventEmitter();
   formRestaurant: Restaurant;
   message: string;
   nameIsValid = false;
@@ -37,16 +40,30 @@ export class RestaurantEditComponent implements OnInit {
   }
 
   onSubmit() {
-    if(this.formRestaurant.id == null) {
+    this.message = 'Saving...';
+    if(this.restaurant.id == null) {
+      console.log('here1');
       this.dataService.addRestaurant(this.formRestaurant).subscribe(
         (restaurant: Restaurant) => {
+          this.dataChangedEvent.emit();
           this.router.navigate(['restaurants'], {queryParams: {action: 'view', id: restaurant.id}})
+        },
+        (error) => {
+          this.message = 'Something went wrong.  The restaurant was not added.'
         }
       )
     } else {
+      console.log('here2');
       this.dataService.updateRestaurant(this.formRestaurant).subscribe(
-        (restaurant: Restaurant) => {
-          this.router.navigate(['restaurants'], {queryParams: {action: 'view', id: restaurant.id}})
+        (restaurant) => {
+          console.log('rest:');
+          console.log(restaurant);
+          this.dataChangedEvent.emit();
+          this.router.navigate(['restaurants'], {queryParams: {action: 'view', id: restaurant.id}});
+        },
+        (error) => {
+          console.log('here3');
+          this.message = 'Error during update';
         }
       )
     }

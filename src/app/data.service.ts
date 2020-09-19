@@ -61,13 +61,12 @@ export class DataService {
   }
 
   updateRestaurant(restaurant: Restaurant) : Observable<Restaurant>{
-    return of(null);
+    return this.http.put<Restaurant>(environment.restUrl + '/api/restaurants', restaurant);
 
   }
 
   addRestaurant(newRestaurant: Restaurant) : Observable<Restaurant> {
-    return of(null);
-
+    return this.http.post<Restaurant>(environment.restUrl + '/api/restaurants', newRestaurant)
   }
 
   deleteRestaurant(id: number) : Observable<any>{
