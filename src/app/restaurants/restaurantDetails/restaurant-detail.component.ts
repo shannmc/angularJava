@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Restaurant} from '../../model/Restaurant';
 import {DataService} from '../../data.service';
 import {Router} from '@angular/router';
@@ -12,6 +12,11 @@ export class RestaurantDetailComponent implements OnInit {
   @Input()
   restaurant: Restaurant;
 
+  @Output()
+  dataChangedEvent = new EventEmitter();
+
+  message = '';
+
   constructor(private dataService: DataService,
               private router: Router ) {
   }
@@ -24,9 +29,14 @@ export class RestaurantDetailComponent implements OnInit {
   }
 
   deleteRestaurant() {
+    this.message = 'Deleting...';
     this.dataService.deleteRestaurant(this.restaurant.id).subscribe(
       next => {
+        this.dataChangedEvent.emit();
         this.router.navigate(['restaurants'])
+      },
+      (error) => {
+        this.message = 'Sorry this restaurant cannot be deleted at this time';
       }
     )
   }

@@ -70,7 +70,7 @@ export class DataService {
   }
 
   deleteRestaurant(id: number) : Observable<any>{
-    return of(null);
+    return this.http.delete(environment.restUrl + '/api/restaurants/' + id);
 
   }
 
