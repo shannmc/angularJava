@@ -50,7 +50,8 @@ export class DataService {
   }
 
   addUser(newUser: User, password: string) : Observable<User> {
-    return of(null);
+    const fullUser = {id: newUser.id, name: newUser.name, password};
+    return this.http.post<User>(environment.restUrl + '/api/users', fullUser);
 
   }
 

@@ -60,6 +60,9 @@ export class UserEditComponent implements OnInit {
         (user: User) => {
           this.dataChangedEvent.emit();
           this.router.navigate(['admin', 'users'], {queryParams: {action: 'view', id: user.id}})
+        },
+        (error) => {
+          this.message = 'Something went wrong.  The data was not saved';
         }
       )
     } else {
