@@ -29,16 +29,19 @@ export class RestaurantDetailComponent implements OnInit {
   }
 
   deleteRestaurant() {
-    this.message = 'Deleting...';
-    this.dataService.deleteRestaurant(this.restaurant.id).subscribe(
-      next => {
-        this.dataChangedEvent.emit();
-        this.router.navigate(['restaurants'])
-      },
-      (error) => {
-        this.message = 'Sorry this restaurant cannot be deleted at this time';
-      }
-    )
+    const result = confirm('Are you sure you wish to delete this user?');
+    if(result) {
+      this.message = 'Deleting...';
+      this.dataService.deleteRestaurant(this.restaurant.id).subscribe(
+        next => {
+          this.dataChangedEvent.emit();
+          this.router.navigate(['restaurants'])
+        },
+        (error) => {
+          this.message = 'Sorry this restaurant cannot be deleted at this time';
+        }
+      )
+    }
   }
 
 }
