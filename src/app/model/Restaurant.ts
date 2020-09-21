@@ -20,8 +20,7 @@ export class Restaurant {
   }
 
   static getCategories() : Category[]{
-    return Object.values(Category)
-    // return Category;
+    return Object.values(Category).sort()
   }
 }
 
@@ -38,38 +37,35 @@ export enum Category {
   SALADS = 'Salads',
   BUFFET = 'Buffet',
   BAKERY = 'Bakery',
-  COFFEE = 'Coffee',
-  // SMOOTHIE,
-  // DESSERT,
-  // STEAK,
-  // FANCY,
-  // AMBIANCE,
-  // ICE_CREAM,
-  // TEA,
-  // POKE,
-  // SUSHI,
-  // VIETNAMESE,
-  // PERUVIAN,
-  // SEAFOOD,
-  // BURGERS,
-  // HIBACHI,
-  // PIZZA,
-  // SUBS,
-  // BAR,
-  // PASTA,
-  // ITALIAN,
-  // BREAKFAST,
-  // BRUNCH,
-  // DRINKS,
-  // BBQ,
-  // MEDITERRANEAN,
-  // DELI,
-  // LUNCH,
-  // SOUTHERN,
-  // FOOD_TRUCK,
-  // FOOD_STAND,
-  // CAFE,
-  // OTHER
+  COFFEE = 'Coffee/Tea',
+  SMOOTHIE = 'Smoothie',
+  DESSERT = 'Dessert',
+  STEAK = 'Steak',
+  AMBIANCE = 'Ambiance',
+  ICE_CREAM = 'Ice cream',
+  POKE = 'Poke',
+  SUSHI = 'Sushi',
+  VIETNAMESE = 'Vietnamese',
+  PERUVIAN = 'Peruvian',
+  SEAFOOD = 'Seafood',
+  BURGERS = 'Burgers',
+  HIBACHI = 'Hibachi',
+  PIZZA = 'Pizza',
+  SUBS = 'Subs',
+  BAR = 'Bar',
+  PASTA = 'Pasta',
+  ITALIAN = 'Italian',
+  BREAKFAST = 'Breakfast',
+  BRUNCH = 'Brunch',
+  DRINKS = 'Drinks',
+  BBQ = 'BBQ',
+  MEDITERRANEAN= 'Mediterranean',
+  DELI = 'Deli',
+  LUNCH = 'Lunch',
+  SOUTHERN = 'Southern',
+  FOOD_TRUCK = 'Food truck/stand',
+  CAFE = 'Cafe',
+  OTHER = 'Other'
 
 }
 

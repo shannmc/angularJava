@@ -13,7 +13,7 @@
   </div>
 
   <div class = "form-group" *ngFor="let category of dataService.getCategories()">
-    <input type="checkbox" id="{{category}}" [(ngModel)]="category.selected" name={{category}}>
+    <input type="checkbox" id="{{category}}" name={{category}}>
     <label for="{{category}}">{{category}}</label>
   </div>
 
