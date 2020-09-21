@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Restaurant} from './model/Restaurant'
+import {Category, Restaurant} from './model/Restaurant'
 import {User} from './model/User';
 import {Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
@@ -41,9 +41,11 @@ export class DataService {
       );
   }
 
-  getCategories() {
-    return null;
+  getCategories() : Category[]{
+    console.log(Restaurant.getCategories());
+    return Restaurant.getCategories();
   }
+
   updateUser(user: User) : Observable<User>{
     return this.http.put<User>(environment.restUrl + '/api/users', user);
 

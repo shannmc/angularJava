@@ -17,13 +17,6 @@
     <label for="{{category}}">{{category}}</label>
   </div>
 
-<!--  <input value={{object.name}} type="checkbox" [(ng-model)]="object.selected" (change)="onChange(object.selected)">-->
-
-  <!--  //<input type="checkbox" [(ngModel)]="object.selected" />-->
-<!--  From Angular 4, must add the name attribute for this to bind.-->
-
-<!--  <input type="checkbox" [(ngModel)]="object.selected" name="element_name"/>-->
-
   <div class="form-group">
     <label for="name">Rating</label>
     <input type="text" class="form-control" id="rating" placeholder="rating" [(ngModel)]="formRestaurant.rating" name="rating"

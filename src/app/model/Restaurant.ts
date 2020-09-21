@@ -19,22 +19,26 @@ export class Restaurant {
     return newRestaurant;
   }
 
+  static getCategories() : Category[]{
+    return Object.values(Category)
+    // return Category;
+  }
 }
 
 export enum Category {
   AMERICAN = 'American',
   FAST_FOOD = 'Fast food',
   MEXICAN = 'Mexican',
-  // SOUTHWESTERN,
-  // JAPANESE,
-  // CHINESE,
-  // ASIAN,
-  // THAI,
-  // INDIAN,
-  // SALADS,
-  // BUFFET,
-  // BAKERY,
-  // COFFEE,
+  SOUTHWESTERN = 'Southwestern',
+  JAPANESE = 'Japanese',
+  CHINESE = 'Chinese',
+  ASIAN = 'Asian',
+  THAI = 'Thai',
+  INDIAN = 'Indian',
+  SALADS = 'Salads',
+  BUFFET = 'Buffet',
+  BAKERY = 'Bakery',
+  COFFEE = 'Coffee',
   // SMOOTHIE,
   // DESSERT,
   // STEAK,
@@ -62,6 +66,9 @@ export enum Category {
   // DELI,
   // LUNCH,
   // SOUTHERN,
+  // FOOD_TRUCK,
+  // FOOD_STAND,
+  // CAFE,
   // OTHER
 
 }
