@@ -42,7 +42,7 @@ export class DataService {
   }
 
   getCategories() : Category[]{
-    console.log(Restaurant.getCategories());
+    // console.log(Restaurant.getCategories());
     return Restaurant.getCategories();
   }
 
