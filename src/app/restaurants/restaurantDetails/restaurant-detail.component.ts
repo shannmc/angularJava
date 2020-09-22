@@ -24,6 +24,15 @@ export class RestaurantDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+  formatLocation(location: string) : string {
+    const words = location.split('_');
+    const newLocation = words.join(' ');
+    return newLocation.toLowerCase()
+      .split(' ')
+      .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+      .join(' ');
+  }
+
   editRestaurant(){
     this.router.navigate(['restaurants'], {queryParams: {id: this.restaurant.id, action: 'edit'}})
   }

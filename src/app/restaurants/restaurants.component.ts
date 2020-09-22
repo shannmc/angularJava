@@ -25,6 +25,15 @@ export class RestaurantsComponent implements OnInit {
     this.loadData();
   }
 
+  formatLocation(location: string) : string {
+    const words = location.split('_');
+    const newLocation = words.join(' ');
+    return newLocation.toLowerCase()
+      .split(' ')
+      .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+      .join(' ');
+  }
+
   loadData() {
     this.dataService.getRestaurants().subscribe(
       (next) => {

@@ -23,16 +23,34 @@
            #ratingField="ngModel">
   </div>
 
-  <div class="form-group">
-    <label for="name">Have You Tried Here Yet?</label>
-    <input type="text" class="form-control" id="haveTried" placeholder="no" [(ngModel)]="formRestaurant.haveTried" name="haveTried"
-           #haveTriedField="ngModel">
-  </div>
+<!--  <div class="form-group">-->
+<!--    <label for="name">Have You Tried Here Yet?</label>-->
+<!--    <input type="text" class="form-control" id="haveTried" placeholder="no" [(ngModel)]="formRestaurant.haveTried" name="haveTried"-->
+<!--           #haveTriedField="ngModel">-->
+<!--  </div>-->
 
   <div class="form-group">
-    <label for="name">Location</label>
-    <input type="text" class="form-control" id="location" placeholder="location" [(ngModel)]="formRestaurant.location" name="location"
-           #locationField="ngModel">
+    <label for="name">Have You Tried Here Yet?</label>
+    <input type="radio" [(ngModel)]="formRestaurant.haveTried" name="choice" value="true"> Yes
+    <input type="radio" [(ngModel)]="formRestaurant.haveTried" name="choice" value="false"> No
+  </div>
+
+<!--  <div class="form-group">-->
+<!--    <label for="name">Location</label>-->
+<!--    <input type="text" class="form-control" id="location" placeholder="location" [(ngModel)]="formRestaurant.location" name="location"-->
+<!--           #locationField="ngModel">-->
+<!--  </div>-->
+
+  <div class="form-group">
+    <select name="location" id="location" [(ngModel)]="formRestaurant.location">
+      <option selected="selected" value="DOWNTOWN">Downtown</option>
+      <option value="WEST_ASHLEY">West Ashley</option>
+      <option value="NORTH_CHARLESTON">North Charleston</option>
+      <option value="MT_PLEASANT">Mount Pleasant</option>
+      <option value="SUMMERVILLE">Summerville</option>
+      <option value="JAMES_ISLAND">James Island</option>
+      <option value="JOHNS_ISLAND">Johns Island</option>
+    </select>
   </div>
 
   <div class="form-group">
