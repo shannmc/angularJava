@@ -26,12 +26,14 @@ export class RestaurantsComponent implements OnInit {
   }
 
   formatLocation(location: string) : string {
-    const words = location.split('_');
-    const newLocation = words.join(' ');
-    return newLocation.toLowerCase()
-      .split(' ')
-      .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-      .join(' ');
+    if(location) {
+      const words = location.split('_');
+      const newLocation = words.join(' ');
+      return newLocation.toLowerCase()
+        .split(' ')
+        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(' ');
+    } else return '';
   }
 
   loadData() {

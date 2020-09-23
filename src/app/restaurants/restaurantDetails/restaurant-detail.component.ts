@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-restaurant-detail',
   templateUrl: './restaurant-detail.component.html',
+  styleUrls: ['./restaurant-detail.component.css']
 })
 export class RestaurantDetailComponent implements OnInit {
 
@@ -25,12 +26,15 @@ export class RestaurantDetailComponent implements OnInit {
   }
 
   formatLocation(location: string) : string {
-    const words = location.split('_');
-    const newLocation = words.join(' ');
-    return newLocation.toLowerCase()
-      .split(' ')
-      .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-      .join(' ');
+    if (location) {
+      console.log('here1')
+      const words = location.split('_');
+      const newLocation = words.join(' ');
+      return newLocation.toLowerCase()
+        .split(' ')
+        .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(' ');
+    } else return '';
   }
 
   editRestaurant(){

@@ -1,3 +1,11 @@
-.btn {
+.btn, .btn-warning, .btn-small {
   background-color: pink;
+  border-bottom-color: darkmagenta !important;
+  margin-right: 20px;
+}
+
+
+.btn:hover, .btn:focus, .btn:active {
+  background-color: darkmagenta;
+  border-color: #285e8e; /*set the color you want here*/
 }

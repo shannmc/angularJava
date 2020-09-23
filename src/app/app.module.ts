@@ -14,6 +14,7 @@ import {FormsModule} from '@angular/forms';
 import {RestaurantEditComponent} from './restaurants/restaurantEdit/restaurant-edit.component';
 import {HttpClientModule} from '@angular/common/http';
 import {MatProgressSpinnerModule, MatSpinner} from '@angular/material/progress-spinner';
+import {MatSortModule} from "@angular/material/sort";
 
 
 const routes: Routes = [
@@ -37,13 +38,14 @@ const routes: Routes = [
     UserEditComponent,
     RestaurantEditComponent,
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes),
-    HttpClientModule,
-    FormsModule,
-    MatProgressSpinnerModule,
-  ],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(routes),
+        HttpClientModule,
+        FormsModule,
+        MatProgressSpinnerModule,
+        MatSortModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
