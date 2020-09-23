@@ -1,5 +1,4 @@
-import {Directive, ElementRef, Input, OnInit} from '@angular/core';
-import {Renderer} from '@angular/compiler-cli/ngcc/src/rendering/renderer';
+import {Directive, ElementRef, Input, OnInit, Renderer2} from '@angular/core';
 
 // tslint:disable-next-line:directive-selector
 @Directive({selector: '[sortColumn]'})
@@ -9,7 +8,7 @@ export class SortDirective implements OnInit {
   @Input('sortKey') key: any;
   private toggleSort            = false;
 
-  constructor (private el: ElementRef, private renderer: Renderer) {
+  constructor (private el: ElementRef, private renderer: Renderer2) {
   }
 
   ngOnInit () {
