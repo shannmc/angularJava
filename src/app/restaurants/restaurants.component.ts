@@ -10,16 +10,16 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class RestaurantsComponent implements OnInit {
 
+  constructor(private dataService: DataService,
+              private route: ActivatedRoute,
+              private router: Router) { }
+
   restaurants: Array<Restaurant>;
   selectedRestaurant: Restaurant;
   action: string;
   loadingData = true;
   message = 'Please wait...getting list of restaurants';
   reloadAttemptCount = 0;
-
-  constructor(private dataService: DataService,
-              private route: ActivatedRoute,
-              private router: Router) { }
 
   ngOnInit() {
     this.loadData();
