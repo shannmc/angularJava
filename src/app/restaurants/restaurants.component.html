@@ -3,13 +3,15 @@
 <a class="btn btn-warning mb-3" (click)="addRestaurant()">add</a>
 <div class="row">
   <div class="col-6">
-    <table class="table" matSort>
+    <table class="table">
+<!--      <i class="fa fa-chevron-up" *ngIf="data-order" === 'asc'"></i>-->
+<!--      <i class="fa fa-chevron-down" *ngIf="sortDirection === 'desc'"></i>-->
       <thead>
       <tr>
-        <th [appSort]="restaurants" data-order="desc" data-name="name">Name</th>
-        <th>Category</th>
-        <th>Rating</th>
-        <th>Location</th>
+        <th [appSort]="restaurants" data-order="asc" data-name="name">Name</th>
+        <th [appSort]="restaurants" data-order="asc" data-name="category">Category</th>
+        <th [appSort]="restaurants" data-order="desc" data-name="rating">Rating</th>
+        <th [appSort]="restaurants" data-order="asc" data-name="location">Location</th>
         <th>Have Tried</th>
 
       </tr>
@@ -18,6 +20,7 @@
       <tr *ngFor = "let restaurant of restaurants" >
         <td>{{restaurant.name}}</td>
         <td>{{restaurant.category}}</td>
+<!--        sorting by rating isn't working right now bc it's a word not a number-->
         <td *ngIf="restaurant.rating === 'ONE'">  <i class ="fa fa-star"></i></td>
         <td *ngIf="restaurant.rating === 'TWO'">  <i class ="fa fa-star"></i><i class ="fa fa-star"></i></td>
         <td *ngIf="restaurant.rating === 'THREE'">  <i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"></i></td>

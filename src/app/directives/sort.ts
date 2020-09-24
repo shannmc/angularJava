@@ -3,7 +3,7 @@ export class Sort {
   private collator = new Intl.Collator(undefined, {
     numeric: true,
     sensitivity: 'base',
-  })
+  });
 
   constructor() {
   }
@@ -13,16 +13,6 @@ export class Sort {
       this.sortOrder = -1;
     } return (a, b) => {
       return this.collator.compare(a[property], b[property]) * this.sortOrder;
-    }
-  }
-
-  private sortData(a, b) {
-    if(a < b) {
-      return -1 * this.sortOrder;
-    } else if (a > b) {
-      return 1 * this.sortOrder;
-    } else {
-      return 0 * this.sortOrder;
     }
   }
 }

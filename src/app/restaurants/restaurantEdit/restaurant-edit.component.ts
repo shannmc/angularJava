@@ -42,7 +42,6 @@ export class RestaurantEditComponent implements OnInit {
   onSubmit() {
     this.message = 'Saving...';
     if(this.restaurant.id == null) {
-      console.log('here1');
       this.dataService.addRestaurant(this.formRestaurant).subscribe(
         (restaurant: Restaurant) => {
           this.dataChangedEvent.emit();
@@ -53,7 +52,6 @@ export class RestaurantEditComponent implements OnInit {
         }
       )
     } else {
-      console.log('here2');
       this.dataService.updateRestaurant(this.formRestaurant).subscribe(
         (restaurant) => {
           console.log('rest:');
@@ -62,7 +60,6 @@ export class RestaurantEditComponent implements OnInit {
           this.router.navigate(['restaurants'], {queryParams: {action: 'view', id: restaurant.id}});
         },
         (error) => {
-          console.log('here3');
           this.message = 'Error during update';
         }
       )

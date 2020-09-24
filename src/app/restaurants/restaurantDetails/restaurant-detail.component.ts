@@ -27,7 +27,6 @@ export class RestaurantDetailComponent implements OnInit {
 
   formatLocation(location: string) : string {
     if (location) {
-      console.log('here1')
       const words = location.split('_');
       const newLocation = words.join(' ');
       return newLocation.toLowerCase()
