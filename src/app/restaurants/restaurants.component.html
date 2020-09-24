@@ -20,11 +20,12 @@
       <tr *ngFor = "let restaurant of restaurants" >
         <td>{{restaurant.name}}</td>
         <td>{{restaurant.category}}</td>
-        <td *ngIf="restaurant.rating === 1">  <i class ="fa fa-star"></i></td>
-        <td *ngIf="restaurant.rating === 2">  <i class ="fa fa-star"></i><i class ="fa fa-star"></i></td>
-        <td *ngIf="restaurant.rating === 3">  <i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"></i></td>
-        <td *ngIf="restaurant.rating === 4">  <i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"><i class ="fa fa-star"></i></i></td>
-        <td *ngIf="restaurant.rating === 5">  <i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"></i></td>
+<!--        <ng-container *ngFor="let i of [].constructor(20)">🐱</ng-container>-->
+        <td *ngIf="restaurant.rating === 1"><ng-container *ngFor="let i of [].constructor(1)"><i class ="fa fa-star"></i></ng-container></td>
+        <td *ngIf="restaurant.rating === 2"><ng-container *ngFor="let i of [].constructor(2)"><i class ="fa fa-star"></i></ng-container></td>
+        <td *ngIf="restaurant.rating === 3"><ng-container *ngFor="let i of [].constructor(3)"><i class ="fa fa-star"></i></ng-container></td>
+        <td *ngIf="restaurant.rating === 4"><ng-container *ngFor="let i of [].constructor(4)"><i class ="fa fa-star"></i></ng-container></td>
+        <td *ngIf="restaurant.rating === 5"><ng-container *ngFor="let i of [].constructor(5)"><i class ="fa fa-star"></i></ng-container></td>
         <td *ngIf="!restaurant.rating">  {{restaurant.rating}}</td>
 
         <td>{{formatLocation(restaurant.location)}}</td>
