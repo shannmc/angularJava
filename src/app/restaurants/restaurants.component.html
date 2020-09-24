@@ -6,8 +6,7 @@
     <table class="table" matSort>
       <thead>
       <tr>
-<!--        <th mat-sort-header="name">Name</th>-->
-        <th  sortColumn [sortKey]="'name'" [data]="data">Name</th>
+        <th [appSort]="restaurants" data-order="desc" data-name="name">Name</th>
         <th>Category</th>
         <th>Rating</th>
         <th>Location</th>

@@ -15,7 +15,8 @@ import { RestaurantEditComponent } from './restaurants/restaurantEdit/restaurant
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule, MatSpinner } from '@angular/material/progress-spinner';
 import { MatSortModule } from '@angular/material/sort';
-import { SortDirective } from './directives/sort.directive';
+import {SortDirective} from './directives/sort-directive';
+import {Sort} from './directives/sort';
 
 
 const routes: Routes = [
@@ -47,8 +48,9 @@ const routes: Routes = [
         FormsModule,
         MatProgressSpinnerModule,
         MatSortModule,
+
     ],
-  providers: [],
+  providers: [Sort],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
