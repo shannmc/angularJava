@@ -20,12 +20,11 @@
       <tr *ngFor = "let restaurant of restaurants" >
         <td>{{restaurant.name}}</td>
         <td>{{restaurant.category}}</td>
-<!--        sorting by rating isn't working right now bc it's a word not a number-->
-        <td *ngIf="restaurant.rating === 'ONE'">  <i class ="fa fa-star"></i></td>
-        <td *ngIf="restaurant.rating === 'TWO'">  <i class ="fa fa-star"></i><i class ="fa fa-star"></i></td>
-        <td *ngIf="restaurant.rating === 'THREE'">  <i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"></i></td>
-        <td *ngIf="restaurant.rating === 'FOUR'">  <i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"><i class ="fa fa-star"></i></i></td>
-        <td *ngIf="restaurant.rating === 'FIVE'">  <i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"></i></td>
+        <td *ngIf="restaurant.rating === 1">  <i class ="fa fa-star"></i></td>
+        <td *ngIf="restaurant.rating === 2">  <i class ="fa fa-star"></i><i class ="fa fa-star"></i></td>
+        <td *ngIf="restaurant.rating === 3">  <i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"></i></td>
+        <td *ngIf="restaurant.rating === 4">  <i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"><i class ="fa fa-star"></i></i></td>
+        <td *ngIf="restaurant.rating === 5">  <i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"></i><i class ="fa fa-star"></i></td>
         <td *ngIf="!restaurant.rating">  {{restaurant.rating}}</td>
 
         <td>{{formatLocation(restaurant.location)}}</td>

@@ -29,8 +29,6 @@ export class SortDirective {
       element.setAttribute('data-order', 'desc');
       // element.setAttribute('classProperty', 'fa fa-chevron-down')
     }
-
   }
-
 
 }
