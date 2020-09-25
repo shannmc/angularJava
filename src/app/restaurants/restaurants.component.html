@@ -8,11 +8,12 @@
 <!--      <i class="fa fa-chevron-down" *ngIf="sortDirection === 'desc'"></i>-->
       <thead>
       <tr>
-        <th [appSort]="restaurants" data-order="asc" data-name="name">Name</th>
-        <th [appSort]="restaurants" data-order="asc" data-name="category">Category</th>
-        <th [appSort]="restaurants" data-order="desc" data-name="rating">Rating</th>
-        <th [appSort]="restaurants" data-order="asc" data-name="location">Location</th>
-        <th [appSort]="restaurants" data-order="asc" data-name="haveTried">Have Tried</th>
+<!--        <th [appSort]="restaurants" data-order="asc" data-name="name">Name</th>-->
+        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="asc" data-name="name">Name</i></th>
+        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="asc" data-name="category">Category</i></th>
+        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="desc" data-name="rating">Rating</i></th>
+        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="asc" data-name="location">Location</i></th>
+        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="asc" data-name="haveTried">Have Tried</i></th>
 
       </tr>
       </thead>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 import {DataService} from '../data.service';
 import {Restaurant} from '../model/Restaurant';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -20,6 +20,8 @@ export class RestaurantsComponent implements OnInit {
   loadingData = true;
   message = 'Please wait...getting list of restaurants';
   reloadAttemptCount = 0;
+
+  // @HostBinding('class.fa-chevron-up')
 
   ngOnInit() {
     this.loadData();
