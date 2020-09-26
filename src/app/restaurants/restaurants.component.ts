@@ -21,8 +21,7 @@ export class RestaurantsComponent implements OnInit {
   message = 'Please wait...getting list of restaurants';
   reloadAttemptCount = 0;
   location: string;
-
-  // @HostBinding('class.fa-chevron-up')
+  category: string;
 
   ngOnInit() {
     this.loadData();
