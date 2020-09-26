@@ -1,3 +1,7 @@
 table .rating{
   min-width: 100px;
 }
+
+th i {
+  cursor: pointer;
+}
