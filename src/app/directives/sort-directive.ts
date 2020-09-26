@@ -22,7 +22,6 @@ export class SortDirective {
     if(order === 'desc') {
       this.appSort.sort(sort.startSort(property, order, type));
       element.setAttribute('data-order', 'asc');
-      console.log(element.classList);
       element.classList.replace('fa-chevron-up', 'fa-chevron-down');
     } else {
       this.appSort.sort(sort.startSort(property, order, type));

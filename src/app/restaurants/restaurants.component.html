@@ -3,27 +3,16 @@
 <a class="btn btn-warning mb-3" (click)="addRestaurant()">add</a>
 <div class="row">
   <div class="col-6">
-    <div class="form-group">
-      <strong>Location</strong>
-      <select class="form-control" [(ngModel)]="location">
-        <option></option>
-        <option value="DOWNTOWN">Downtown</option>
-        <option value="WEST_ASHLEY">West Ashley</option>
-        <option value="NORTH_CHARLESTON">North Charleston</option>
-        <option value="MT_PLEASANT">Mount Pleasant</option>
-        <option value="SUMMERVILLE">Summerville</option>
-        <option value="JAMES_ISLAND">James Island</option>
-        <option value="JOHNS_ISLAND">Johns Island</option>
-      </select>
-    </div>
     <table class="table" >
       <thead>
       <tr>
-        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="asc" data-name="name">Name</i></th>
-        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="asc" data-name="category">Category</i></th>
+        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="desc" data-name="name">Name</i></th>
+        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="desc" data-name="category">Category</i></th>
         <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="desc" data-name="rating">Rating</i></th>
-        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="asc" data-name="location">Location</i></th>
-        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="asc" data-name="haveTried">Have Tried</i></th>
+        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="desc" data-name="location">Location</i>
+          <app-restaurants-filter (dataChangedEvent)="receiveLocationChangeFromChild($event)"></app-restaurants-filter>
+        </th>
+        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="desc" data-name="haveTried">Have Tried</i></th>
       </tr>
       </thead>
 
@@ -44,12 +33,6 @@
       </tr>
       </tbody>
     </table>
-<!--    <select ng-model="demo.tableParams.filter()['location']">-->
-<!--      <option value="">All</option>-->
-<!--      <option value="downtown">downtown</option>-->
-<!--      <option value="summerville">summerville</option>-->
-<!--    </select>-->
-
     <div *ngIf="loadingData"> {{message}}</div>
   </div>
   <div class="col-6">

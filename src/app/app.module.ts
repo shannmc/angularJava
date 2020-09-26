@@ -18,6 +18,7 @@ import { MatSortModule } from '@angular/material/sort';
 import {SortDirective} from './directives/sort-directive';
 import {Sort} from './directives/sort';
 import {TableFilterPipe} from './directives/table-filter.pipe';
+import {RestaurantsFilterComponent} from "./restaurants/restaurantFilter/restaurants-filter.component";
 
 
 const routes: Routes = [
@@ -42,6 +43,7 @@ const routes: Routes = [
     RestaurantEditComponent,
     SortDirective,
     TableFilterPipe,
+    RestaurantsFilterComponent,
   ],
     imports: [
         BrowserModule,

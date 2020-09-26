@@ -20,8 +20,13 @@ export class RestaurantsComponent implements OnInit {
   loadingData = true;
   message = 'Please wait...getting list of restaurants';
   reloadAttemptCount = 0;
+  // from filter child component
   location: string;
   category: string;
+
+  receiveLocationChangeFromChild($event) {
+    this.location = $event
+  }
 
   ngOnInit() {
     this.loadData();
