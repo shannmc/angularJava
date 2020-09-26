@@ -17,6 +17,7 @@ import { MatProgressSpinnerModule, MatSpinner } from '@angular/material/progress
 import { MatSortModule } from '@angular/material/sort';
 import {SortDirective} from './directives/sort-directive';
 import {Sort} from './directives/sort';
+import {TableFilterPipe} from './directives/table-filter.pipe';
 
 
 const routes: Routes = [
@@ -40,6 +41,7 @@ const routes: Routes = [
     UserEditComponent,
     RestaurantEditComponent,
     SortDirective,
+    TableFilterPipe,
   ],
     imports: [
         BrowserModule,

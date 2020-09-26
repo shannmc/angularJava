@@ -3,7 +3,15 @@
 <a class="btn btn-warning mb-3" (click)="addRestaurant()">add</a>
 <div class="row">
   <div class="col-6">
-    <table class="table">
+    <div class="form-group">
+      <strong>Location</strong>
+      <select class="form-control" [(ngModel)]="location">
+        <option></option>
+        <option value="SUMMERVILLE">Summerville</option>
+        <option value="DOWNTOWN">Downtown</option>
+      </select>
+    </div>
+    <table class="table" >
       <thead>
       <tr>
         <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="asc" data-name="name">Name</i></th>
@@ -15,7 +23,7 @@
       </thead>
 
       <tbody>
-      <tr *ngFor = "let restaurant of restaurants" >
+      <tr *ngFor = "let restaurant of restaurants | tableFilter: location" >
         <td>{{restaurant.name}}</td>
         <td>{{restaurant.category}}</td>
         <td class="rating" *ngIf="!restaurant.rating">  {{restaurant.rating}}</td>
@@ -31,6 +39,12 @@
       </tr>
       </tbody>
     </table>
+<!--    <select ng-model="demo.tableParams.filter()['location']">-->
+<!--      <option value="">All</option>-->
+<!--      <option value="downtown">downtown</option>-->
+<!--      <option value="summerville">summerville</option>-->
+<!--    </select>-->
+
     <div *ngIf="loadingData"> {{message}}</div>
   </div>
   <div class="col-6">

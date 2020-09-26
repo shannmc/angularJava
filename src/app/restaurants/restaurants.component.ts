@@ -20,6 +20,7 @@ export class RestaurantsComponent implements OnInit {
   loadingData = true;
   message = 'Please wait...getting list of restaurants';
   reloadAttemptCount = 0;
+  location: string;
 
   // @HostBinding('class.fa-chevron-up')
 
