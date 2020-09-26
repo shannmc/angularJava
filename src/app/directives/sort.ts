@@ -8,11 +8,21 @@ export class Sort {
   constructor() {
   }
 
-  public startSort(property, order, type='') {
+  public startSort(property, order) {
     if(order === 'desc') {
       this.sortOrder = -1;
     } return (a, b) => {
+      if(!a[property] && !b[property]){
+        return 0;
+      }
+      if(!a[property]){
+        return 1;
+      }
+      if(!b[property]){
+        return -1;
+      }
       return this.collator.compare(a[property], b[property]) * this.sortOrder;
+
     }
   }
 }

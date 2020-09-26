@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TableFilterPipe implements PipeTransform {
 
   transform(list: any[], value: string) {
-    console.log('working');
     return value ? list.filter(restaurant => restaurant.location === value) : list;
   }
 }
