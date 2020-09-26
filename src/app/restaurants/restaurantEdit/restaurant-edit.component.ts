@@ -54,8 +54,6 @@ export class RestaurantEditComponent implements OnInit {
     } else {
       this.dataService.updateRestaurant(this.formRestaurant).subscribe(
         (restaurant) => {
-          console.log('rest:');
-          console.log(restaurant);
           this.dataChangedEvent.emit();
           this.router.navigate(['restaurants'], {queryParams: {action: 'view', id: restaurant.id}});
         },

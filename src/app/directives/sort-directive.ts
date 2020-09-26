@@ -16,14 +16,15 @@ export class SortDirective {
     const sort = new Sort();
     const element = this.targetElement.nativeElement;
     const order = element.getAttribute('data-order');
+    const type = element.getAttribute('data-type');
     const property = element.getAttribute('data-name');
 
     if(order === 'desc') {
-      this.appSort.sort(sort.startSort(property, order));
+      this.appSort.sort(sort.startSort(property, order, type));
       element.setAttribute('data-order', 'asc');
       element.classList.replace('fa-chevron-up', 'fa-chevron-down');
     } else {
-      this.appSort.sort(sort.startSort(property, order));
+      this.appSort.sort(sort.startSort(property, order, type));
       element.setAttribute('data-order', 'desc');
       element.classList.replace('fa-chevron-down', 'fa-chevron-up');
 

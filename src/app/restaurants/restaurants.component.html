@@ -12,7 +12,7 @@
         <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="desc" data-name="location">Location</i>
           <app-restaurants-filter (dataChangedEvent)="receiveLocationChangeFromChild($event)"></app-restaurants-filter>
         </th>
-        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="desc" data-name="haveTried">Have Tried</i></th>
+        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="desc" data-name="haveTried" data-type="boolean">Have Tried</i></th>
       </tr>
       </thead>
 
