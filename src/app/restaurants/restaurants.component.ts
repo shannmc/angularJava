@@ -21,6 +21,7 @@ export class RestaurantsComponent implements OnInit {
   message = 'Please wait...getting list of restaurants';
   reloadAttemptCount = 0;
   // from filter child component
+  // filterBy: string;
   location: string;
   category: string;
 

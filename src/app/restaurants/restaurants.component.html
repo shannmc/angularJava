@@ -9,15 +9,16 @@
         <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="desc" data-name="name">Name</i></th>
         <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="desc" data-name="category">Category</i></th>
         <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="desc" data-name="rating">Rating</i></th>
-        <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="desc" data-name="location">Location</i>
+        <th>
           <app-restaurants-filter (dataChangedEvent)="receiveLocationChangeFromChild($event)"></app-restaurants-filter>
+          <i class="fa fa-chevron-up" [appSort]="restaurants" data-order="desc" data-name="location">Location</i>
         </th>
         <th><i class="fa fa-chevron-up" [appSort]="restaurants" data-order="desc" data-name="haveTried" data-type="boolean">Have Tried</i></th>
       </tr>
       </thead>
 
       <tbody>
-      <tr *ngFor = "let restaurant of restaurants | tableFilter: location" >
+      <tr *ngFor = "let restaurant of restaurants | tableFilter: location : 'location'" >
         <td>{{restaurant.name}}</td>
         <td>{{restaurant.category}}</td>
         <td class="rating" *ngIf="!restaurant.rating">  {{restaurant.rating}}</td>
