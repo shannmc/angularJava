@@ -34,7 +34,9 @@
       </tr>
       </tbody>
     </table>
-    <div *ngIf="loadingData"> {{message}}</div>
+<!--    <div *ngIf="loadingData"> {{message}}</div>-->
+    <mat-spinner *ngIf="loadingData"></mat-spinner>
+
   </div>
   <div class="col-6">
     <app-restaurant-detail *ngIf="action ==='view'" [restaurant]="selectedRestaurant" (dataChangedEvent)="loadData()"></app-restaurant-detail>

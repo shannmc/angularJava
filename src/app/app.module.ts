@@ -15,10 +15,11 @@ import { RestaurantEditComponent } from './restaurants/restaurantEdit/restaurant
 import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule, MatSpinner } from '@angular/material/progress-spinner';
 import { MatSortModule } from '@angular/material/sort';
-import {SortDirective} from './directives/sort-directive';
-import {Sort} from './directives/sort';
-import {TableFilterPipe} from './directives/table-filter.pipe';
-import {RestaurantsFilterComponent} from "./restaurants/restaurantFilter/restaurants-filter.component";
+import { SortDirective } from './directives/sort-directive';
+import { Sort } from './directives/sort';
+import { TableFilterPipe } from './directives/table-filter.pipe';
+import { RestaurantsFilterComponent } from './restaurants/restaurantFilter/restaurants-filter.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const routes: Routes = [
@@ -52,6 +53,7 @@ const routes: Routes = [
         FormsModule,
         MatProgressSpinnerModule,
         MatSortModule,
+        BrowserAnimationsModule,
 
     ],
   providers: [Sort],
