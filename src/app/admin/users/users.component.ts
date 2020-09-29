@@ -9,6 +9,7 @@ import {User} from '../../model/User';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  static ERROR_MESSAGE = 'an error has occurred';
 
   users: Array<User>;
   selectedUser: User;
@@ -42,7 +43,7 @@ export class UsersComponent implements OnInit {
         )
       },
       (error) => {
-        this.message = 'an error has occurred';
+        this.message = UsersComponent.ERROR_MESSAGE;
       }
     )
   }

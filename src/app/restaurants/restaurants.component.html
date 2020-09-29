@@ -34,8 +34,8 @@
       </tr>
       </tbody>
     </table>
-<!--    <div *ngIf="loadingData"> {{message}}</div>-->
-    <mat-spinner *ngIf="loadingData"></mat-spinner>
+    <mat-spinner diameter="40" *ngIf="loadingData && !message.includes('error')"></mat-spinner>
+    <div *ngIf="loadingData && message.includes('error')">{{message}}</div>
 
   </div>
   <div class="col-6">

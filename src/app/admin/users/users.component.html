@@ -16,7 +16,9 @@
       </tr>
       </tbody>
     </table>
-    <mat-spinner *ngIf="loadingData"></mat-spinner>
+    <mat-spinner diameter="40" *ngIf="loadingData && !message.includes('error')"></mat-spinner>
+    <div *ngIf="loadingData && message.includes('error')">{{message}}</div>
+
   </div>
   <div class="col-6">
     <app-user-detail *ngIf="action ==='view'" [user]="selectedUser" (dataChangedEvent)="loadData()"></app-user-detail>

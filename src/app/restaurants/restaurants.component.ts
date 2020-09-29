@@ -51,14 +51,14 @@ export class RestaurantsComponent implements OnInit {
       },
       (error) => {
         if (error.status === 402) {
-          this.message  = 'Sorry - you need to pay to use this application. ';
+          this.message  = 'Sorry an error has occurred - you need to pay to use this application. ';
         } else {
           this.reloadAttemptCount++;
           if (this.reloadAttemptCount <= 10) {
-            this.message = 'Sorry - something went wrong, trying again.... please wait ';
+            this.message = 'Sorry an error has occurred - something went wrong, trying again.... please wait ';
             this.loadData();
           } else {
-            this.message = 'Sorry - something went wrong, please contact support.';
+            this.message = 'Sorry an error has occurred- something went wrong, please contact support.';
           }
 
         }

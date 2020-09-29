@@ -17,7 +17,7 @@ import { MatProgressSpinnerModule, MatSpinner } from '@angular/material/progress
 import { MatSortModule } from '@angular/material/sort';
 import { SortDirective } from './directives/sort-directive';
 import { Sort } from './directives/sort';
-import { TableFilterPipe } from './directives/table-filter.pipe';
+import { TableFilterPipe } from './pipes/table-filter.pipe';
 import { RestaurantsFilterComponent } from './restaurants/restaurantFilter/restaurants-filter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
