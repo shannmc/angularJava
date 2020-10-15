@@ -41,7 +41,6 @@ export class RestaurantEditComponent implements OnInit {
 
   onCheckboxChange(e) {
     if (e.target.checked) {
-      console.log(e.target.name);
       this.formRestaurant.category = e.target.name;
     }
   }

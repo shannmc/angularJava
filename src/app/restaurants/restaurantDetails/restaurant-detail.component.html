@@ -1,5 +1,5 @@
 <div class="restaurantDetails">
-  <h2>{{restaurant.name}} details</h2>
+  <h2>{{restaurant?.name}} details</h2>
   <a class="btn btn-small btn-warning" (click)="editRestaurant()">edit</a>
   <a class="btn btn-small btn-warning" (click)="deleteRestaurant()">delete</a>
   <div class="bg-warning p-5" *ngIf="message">{{message}}</div>
@@ -14,7 +14,7 @@
       <td>location</td><td>{{formatLocation(restaurant?.location)}}</td>
     </tr>
     <tr>
-      <td>rating</td><td>{{ (restaurant.rating) ? restaurant.rating + '/5' : ''}}</td>
+      <td>rating</td><td>{{ (restaurant?.rating) ? restaurant.rating + '/5' : ''}}</td>
     </tr>
     <tr>
       <td>already tried</td><td>{{restaurant?.haveTried}}</td>
