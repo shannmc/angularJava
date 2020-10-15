@@ -39,8 +39,18 @@ export class RestaurantEditComponent implements OnInit {
     }
   }
 
+  onCheckboxChange(e) {
+    if (e.target.checked) {
+      console.log(e.target.name);
+      this.formRestaurant.category = e.target.name;
+    }
+  }
+
   onSubmit() {
     this.message = 'Saving...';
+    console.log('Restaurant Category:');
+    console.log(this.formRestaurant.category);
+
     if(this.restaurant.id == null) {
       this.dataService.addRestaurant(this.formRestaurant).subscribe(
         (restaurant: Restaurant) => {
