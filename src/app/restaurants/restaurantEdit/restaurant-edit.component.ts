@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Router} from '@angular/router';
 import {Restaurant} from '../../model/Restaurant';
 import {DataService} from '../../data.service';
+import {Category} from '../../model/Category';
 
 @Component({
   selector: 'app-restaurant-edit',
@@ -14,9 +15,13 @@ export class RestaurantEditComponent implements OnInit {
   @Input()
   restaurant: Restaurant;
 
+  @Input()
+  category: Category;
+
   @Output()
   dataChangedEvent = new EventEmitter();
   formRestaurant: Restaurant;
+  formCategory: Category;
   message: string;
   nameIsValid = false;
 
@@ -27,7 +32,9 @@ export class RestaurantEditComponent implements OnInit {
   }
 
   initializeForm() {
-    this.formRestaurant = Object.assign({}, this.restaurant)
+    this.formRestaurant = Object.assign({}, this.restaurant);
+    this.formCategory = Object.assign({}, this.category);
+
     this.checkIfNameIsValid();
   }
 
@@ -39,9 +46,15 @@ export class RestaurantEditComponent implements OnInit {
     }
   }
 
+  // onCheckboxChange(e) {
+  //   if (e.target.checked) {
+  //     this.formRestaurant.category = e.target.name;
+  //   }
+  // }
+
   onCheckboxChange(e) {
     if (e.target.checked) {
-      this.formRestaurant.category = e.target.name;
+      this.formCategory.name = e.target.name;
     }
   }
 
@@ -49,6 +62,14 @@ export class RestaurantEditComponent implements OnInit {
     this.message = 'Saving...';
     console.log('Restaurant Category:');
     console.log(this.formRestaurant.category);
+
+
+    this.dataService.addCategory(this.formCategory).subscribe(
+      (category: Category) => {
+        console.log('HEY SHANNON ITS WORKING?:');
+        console.log(category);
+      }
+    );
 
     if(this.restaurant.id == null) {
       this.dataService.addRestaurant(this.formRestaurant).subscribe(

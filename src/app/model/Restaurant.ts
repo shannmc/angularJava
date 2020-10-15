@@ -19,12 +19,12 @@ export class Restaurant {
     return newRestaurant;
   }
 
-  static getCategories() : Category[]{
-    return Object.values(Category).sort()
+  static getCategories() : CategoryEnum[]{
+    return Object.values(CategoryEnum).sort()
   }
 }
 
-export enum Category {
+export enum CategoryEnum {
   AMERICAN = 'American',
   FAST_FOOD = 'Fast food',
   MEXICAN = 'Mexican',

@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import {Category, Restaurant} from './model/Restaurant'
+import {CategoryEnum, Restaurant} from './model/Restaurant'
 import {User} from './model/User';
 import {Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../environments/environment';
 import {map} from 'rxjs/operators';
+import {Category} from './model/Category';
 
 @Injectable({
   providedIn: 'root'
@@ -41,8 +42,7 @@ export class DataService {
       );
   }
 
-  getCategories() : Category[]{
-    // console.log(Restaurant.getCategories());
+  getCategories() : CategoryEnum[]{
     return Restaurant.getCategories();
   }
 
@@ -69,6 +69,12 @@ export class DataService {
 
   addRestaurant(newRestaurant: Restaurant) : Observable<Restaurant> {
     return this.http.post<Restaurant>(environment.restUrl + '/api/restaurants', newRestaurant)
+  }
+
+  addCategory(newCategory: Category) : Observable<Category> {
+    console.log('SHANNON:');
+    console.log(newCategory);
+    return this.http.post<Category>(environment.restUrl + '/api/categories', newCategory)
   }
 
   deleteRestaurant(id: number) : Observable<any>{
