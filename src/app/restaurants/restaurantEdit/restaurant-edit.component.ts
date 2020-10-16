@@ -60,14 +60,14 @@ export class RestaurantEditComponent implements OnInit {
 
   onSubmit() {
     this.message = 'Saving...';
-    console.log('Restaurant Category:');
-    console.log(this.formRestaurant.category);
-
 
     this.dataService.addCategory(this.formCategory).subscribe(
       (category: Category) => {
-        console.log('HEY SHANNON ITS WORKING?:');
+        this.formRestaurant.category = category;
+        console.log('REturened category:');
         console.log(category);
+      }, (error) => {
+        this.message = 'Error saving category';
       }
     );
 

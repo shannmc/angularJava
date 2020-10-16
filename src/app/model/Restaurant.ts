@@ -1,7 +1,9 @@
+import {Category} from './Category';
+
 export class Restaurant {
   id: number;
   name: string;
-  category: string;
+  category: Category;
   location: string;
   rating: number;
   haveTried: boolean;

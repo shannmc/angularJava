@@ -68,12 +68,12 @@ export class DataService {
   }
 
   addRestaurant(newRestaurant: Restaurant) : Observable<Restaurant> {
+    console.log('SHANNON:');
+    console.log(newRestaurant);
     return this.http.post<Restaurant>(environment.restUrl + '/api/restaurants', newRestaurant)
   }
 
   addCategory(newCategory: Category) : Observable<Category> {
-    console.log('SHANNON:');
-    console.log(newCategory);
     return this.http.post<Category>(environment.restUrl + '/api/categories', newCategory)
   }
 
