@@ -3,7 +3,7 @@ import {Category} from './Category';
 export class Restaurant {
   id: number;
   name: string;
-  category: Category;
+  categories: Category[];
   location: string;
   rating: number;
   haveTried: boolean;
