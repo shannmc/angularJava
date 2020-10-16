@@ -3,7 +3,7 @@ import {Category} from './Category';
 export class Restaurant {
   id: number;
   name: string;
-  categories: Category[];
+  associatedCategories: Category[];
   location: string;
   rating: number;
   haveTried: boolean;
@@ -12,7 +12,7 @@ export class Restaurant {
   static fromHttp(restaurant : Restaurant) : Restaurant {
     const newRestaurant = new Restaurant();
     newRestaurant.id = restaurant.id;
-    newRestaurant.category = restaurant.category;
+    newRestaurant.associatedCategories = restaurant.associatedCategories;
     newRestaurant.location = restaurant.location;
     newRestaurant.haveTried = restaurant.haveTried;
     newRestaurant.name = restaurant.name;

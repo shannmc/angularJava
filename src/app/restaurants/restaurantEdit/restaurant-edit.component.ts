@@ -66,7 +66,7 @@ export class RestaurantEditComponent implements OnInit {
     this.dataService.addCategory(this.formCategory).subscribe(
       (category: Category) => {
         this.categoriesList.push(category);
-        this.formRestaurant.categories = this.categoriesList;
+        this.formRestaurant.associatedCategories = this.categoriesList;
         console.log('REturened category:');
         console.log(category);
         this.submitRestaurants();
