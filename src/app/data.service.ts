@@ -24,6 +24,7 @@ export class DataService {
           for (const restaurant of data) {
             restaurants.push(Restaurant.fromHttp(restaurant))
           }
+          console.log(restaurants);
           return restaurants;
         })
       );
@@ -68,8 +69,6 @@ export class DataService {
   }
 
   addRestaurant(newRestaurant: Restaurant) : Observable<Restaurant> {
-    console.log('SHANNON:');
-    console.log(JSON.stringify(newRestaurant));
     return this.http.post<Restaurant>(environment.restUrl + '/api/restaurants', newRestaurant)
   }
 
