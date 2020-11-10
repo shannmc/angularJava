@@ -20,7 +20,7 @@
       <tbody>
       <tr *ngFor = "let restaurant of restaurants | tableFilter: location : 'location'" >
         <td>{{restaurant?.name}}</td>
-        <td>{{restaurant?.associatedCategories[0].name}}</td>
+        <td *ngFor = "let category of restaurant.associatedCategories">{{category.name}}</td>
         <td class="rating" *ngIf="!restaurant.rating">  {{restaurant.rating}}</td>
         <td class="rating" *ngIf="restaurant.rating"><ng-container *ngFor="let i of [].constructor(restaurant.rating)"><i class ="fa fa-star"></i></ng-container></td>
         <td>{{formatLocation(restaurant.location)}}</td>
